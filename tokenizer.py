@@ -38,7 +38,7 @@ def num_tokens_from_messages(messages, model="gpt-3.5-turbo"):
         except KeyError:
             encoding = tiktoken.get_encoding("cl100k_base")
         encoding_cache[model] = encoding
-    if model in support_models::  # note: future models may deviate from this
+    if model in support_models:  # note: future models may deviate from this
         num_tokens = 0
         for message in messages:
             num_tokens += 4  # every message follows <im_start>{role/name}\n{content}<im_end>\n
